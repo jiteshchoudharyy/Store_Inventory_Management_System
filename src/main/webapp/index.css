@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:gainsboro;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  #websiteHeading{
+    position:absolute;
+    margin-top: 11%;
+    margin-left:6%;
+    width: 400px;
+    height: 360px;
+    place-items:center;
+  }
+  #websiteHeadingMain{
+    text-shadow:4px 4px 12px orangered;
+    bottom: -10%;
+    position:absolute;
+    font-size: 168px;
+  }
+  #websiteHeadingRest{
+    text-shadow:4px 4px 12px orangered;
+    top: 60%;
+    position:absolute;
+    font-size: 28px;
+    padding-left: 12px;
+  }
+  .formElement {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .label {
+    padding: 10px;
+    background:#191919;
+    color: white;
+    min-width:fit-content;
+    text-align: center;
+  }
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  .inputField:focus {
+    border: 2px solid dodgerblue;
+  }
+  .automatedField{
+    background: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #191919;
+  }
+  .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .button button{
+    background-color:#191919;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 50%;
+  }
+  .cancelButton:hover {
+    background-color: red;
+    opacity: 1;
+  }
+  .submitButton:hover {
+    background-color:green;
+    opacity: 1;
+  }
+  #taskWindow{
+    border-radius: 20px;
+    background-color:azure;
+    position:absolute;
+    margin-top: 10%;
+    margin-left:38%;
+    padding: 20px;
+    width: 400px;
+    height: 360px;
+    place-items: centre;
+  }
+  .operationPanel{
+    display: none;
+    border-radius: 20px;
+    background-color:azure;
+    position:absolute;
+    margin-top: 10%;
+    margin-left:38%;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    place-items: centre;
+  }
+ .operationHeading{
+    color:#191919;
+    font-size: 26px;
+    text-align: center;
+ }
+  .operationButton{
+    border: 0;
+    background: black;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 25px;
+    outline: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.95);
+  }
+  .operationButton:hover {
+    background:beige;
+    color: black;
+    font-size: 18px;
+  }
+  #productsList{
+    border-radius: 20px;
+    background-color:azure;
+    position:absolute;
+    margin-top: 10%;
+    margin-left:70%;
+    padding: 20px;
+    width: 300px;
+    height: 360px;;
+    place-items: centre;
+  }
+  table,th,td{
+    border: 2px solid #191919;
+  }
+  table{
+    width: 100%;
+  }
+  th,td{
+    width: auto;
+  }
+  th{
+    background-color: gainsboro;
+  }
+  #Footer{
+    background-color: #191919;
+    width: 100%;
+    height: 90px;
+    bottom: 0px;
+    position: absolute;
+  }
+  #copyrightHeading{
+  	top: 12%;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin: 0em;
+  }
+  #copyrightContent{
+  	color: white;
+    text-align: center;
+    position: relative;
+  }

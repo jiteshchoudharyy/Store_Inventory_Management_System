@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<title>Store Inventory</title>
+<head>
+
+  <title>Store Inventory Management</title>
+  <link rel="stylesheet" href="index.css">
+  
+  <script>
+
+    function addProduct() {
+      var taskWindow=document.getElementById("taskWindow");
+      var addProduct = document.getElementById("addProduct");
+      taskWindow.style.display="none";
+      addProduct.style.display = "block";
+      addProduct.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function getDeletionInfo() {
+      var taskWindow=document.getElementById("taskWindow");
+      var getDeletionInfo = document.getElementById("getDeletionInfo");
+      taskWindow.style.display="none";
+      getDeletionInfo.style.display = "block";
+      getDeletionInfo.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function deleteProduct() {
+      var getDeletionInfo = document.getElementById("getDeletionInfo");
+      var deleteProduct = document.getElementById("deleteProduct");
+      getDeletionInfo.style.display="none";
+      deleteProduct.style.display = "block";
+      deleteProduct.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function getSellingInfo() {
+      var taskWindow=document.getElementById("taskWindow");
+      var getSellingInfo = document.getElementById("getSellingInfo");
+      taskWindow.style.display="none";
+      getSellingInfo.style.display = "block";
+      getSellingInfo.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function sellProduct(){
+      var getSellingInfo=document.getElementById("getSellingInfo");
+      var sellProduct=document.getElementById("sellProduct");
+      getSellingInfo.style.display="none";
+      sellProduct.style.display="block";
+      sellProduct.opacity="opacity 2500ms ease-in-out";
+    }
+
+    function getPurchasingInfo() {
+      var taskWindow=document.getElementById("taskWindow");
+      var getPurchasingInfo = document.getElementById("getPurchasingInfo");
+      taskWindow.style.display="none";
+      getPurchasingInfo.style.display = "block";
+      getPurchasingInfo.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function purchaseProduct() {
+      var getPurchasingInfo=document.getElementById("getPurchasingInfo");
+      var purchaseProduct = document.getElementById("purchaseProduct");
+      getPurchasingInfo.style.display="none";
+      purchaseProduct.style.display = "block";
+      purchaseProduct.opacity = "opacity 2500ms ease-in-out";
+    }
+    
+    function requestProductDetails() {
+      var taskWindow=document.getElementById("taskWindow");
+      var requestProductDetails = document.getElementById("requestProductDetails");
+      taskWindow.style.display="none";
+      requestProductDetails.style.display = "block";
+      requestProductDetails.opacity = "opacity 2500ms ease-in-out";
+    }
+
+    function fetchProductDetails() {
+      var requestProductDetails=document.getElementById("requestProductDetails");
+      var fetchProductDetails = document.getElementById("fetchProductDetails");
+      requestProductDetails.style.display="none";
+      fetchProductDetails.style.display = "block";
+      fetchProductDetails.opacity = "opacity 2500ms ease-in-out";
+    }
+    
+    function cancelOperation() {
+      var addProduct = document.getElementById("addProduct");
+      var getDeletionInfo=document.getElementById("getDeletionInfo");
+      var deleteProduct = document.getElementById("deleteProduct");
+      var getSellingInfo=document.getElementById("getSellingInfo");
+      var sellProduct = document.getElementById("sellProduct");
+      var getPurchasingInfo=document.getElementById("getPurchasingInfo");
+      var purchaseProduct = document.getElementById("purchaseProduct");
+      var requestProductDetails=document.getElementById("requestProductDetails");
+      var fetchProductDetails = document.getElementById("fetchProductDetails");
+      addProduct.style.display = "none";
+      getDeletionInfo.style.display="none";
+      deleteProduct.style.display = "none";
+      getSellingInfo.style.display="none";
+      sellProduct.style.display = "none";
+      getPurchasingInfo.style.display="none";
+      purchaseProduct.style.display = "none";
+      requestProductDetails.style.display="none";
+      fetchProductDetails.style.display = "none";
+    }
+
+  </script>
+  
+</head>
+
+<body>
+
+  <!-- Website Heading -->
+  <div id="websiteHeading">
+    <div>
+      <p id="websiteHeadingMain">Store</p>
+    </div>
+    <div id="websiteHeadingRest">
+      <p>Inventory Management System</p>
+    </div>
+  </div>
+
+  <!-- operationButton-->
+  <div id="taskWindow">
+    <button class="operationButton" onclick="addProduct()"><b>Add Product</b></button>
+    <button class="operationButton" onclick="getDeletionInfo()"><b>Delete Product</b></button>
+    <button class="operationButton" onclick="getSellingInfo()"><b>Sell Product</b></button>
+    <button class="operationButton" onclick="getPurchasingInfo()"><b>Purchase Product</b></button>
+    <button class="operationButton" onclick="requestProductDetails()"><b>Fetch Product Details</b></button>
+  </div>
+  
+  <!-- productsList -->
+  <div id="productsList">
+    <div>
+      <h1 class="operationHeading">Products List</h1>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <c:forEach var="product" items="${productsList}">
+          <tr>
+            <td><c:out value="${product.id}" /></td>
+            <td><c:out value="${product.name}" /></td>
+          </tr>
+        </c:forEach>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- addProduct Operation -->
+  <div class="operationPanel" id="addProduct">
+    <form action="addProduct" method="post">
+      <div>
+        <h1 class="operationHeading">Add Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">Name</i>
+        <input class="inputField" type="text" name="name" placeholder="Enter Name...">
+      </div>
+      <div class="formElement">
+        <i class="label">Product ID</i>
+        <input class="inputField" type="text" name="id" placeholder="Enter ID...">
+      </div>
+      <div class="formElement">
+        <i class="label">Unit</i>
+        <select class="inputField" name="unit">
+          <option>kg.</option>
+          <option>gm.</option>
+          <option>lt.</option>
+          <option>ml.</option>
+          <option>Dozen</option>
+          <option>Piece</option>
+        </select>
+      </div>
+      <div class="formElement">
+        <i class="label">Quantity</i>
+        <input class="inputField" type="text" name="quantity" placeholder="Enter Quantity...">
+      </div>
+      <div class="formElement">
+        <i class="label">Price/Quantity</i>
+        <input class="inputField" type="text" name="amountPerQuantity" placeholder="Enter Price/Quantity...">
+      </div>
+      <div class="formElement">
+        <i class="label">Minimum Quantity Alert</i>
+        <input class="inputField" type="text" name="minimumQuantityAlert" placeholder="Enter Minimum Quantity Alert...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="submit" class="submitButton">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- deleteProduct Operation -->
+  <div class="operationPanel" id="getDeletionInfo">
+    <form action="getDeletionInfo" method="post">
+      <div>
+        <h1 class="operationHeading">Delete Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="inputField" type="text" name="id" placeholder="Enter ID...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="button" class="submitButton" onclick="deleteProduct()">Delete</button>
+      </div>
+    </form>
+  </div>
+  <div class="operationPanel" id="deleteProduct">
+    <form action="deleteProduct" method="post">
+      <div>
+        <h1 class="operationHeading">Delete Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="automatedField" type="text" value="${deletionInfo.id}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Name</i>
+        <input class="automatedField" type="text" value="${deletionInfo.name}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Quantity</i>
+        <input class="automatedField" type="text" value="${deletionInfo.quantityUnit}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Total Amount</i>
+        <input class="automatedField" type="text" value="${deletionInfo.totalAmount}" readonly>
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="submit" class="submitButton">Delete</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- sellProduct Operation -->
+  <div class="operationPanel" id="getSellingInfo">
+    <form action="getSellingInfo" method="post">
+      <div>
+        <h1 class="operationHeading">Sell Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="inputField" type="text" name="id" placeholder="Enter ID...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="button" class="submitButton" onclick="sellProduct()">Sell</button>
+      </div>
+    </form>
+  </div>
+  <div class="operationPanel" id="sellProduct">
+    <form action="sellProduct" method="post">
+      <div>
+        <h1 class="operationHeading">Sell Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="automatedField" type="text" name="id" value="${sellingInfo.id}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Name</i>
+        <input class="automatedField" type="text" value="${sellingInfo.name}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Quantity</i>
+        <input class="inputField" type="text" name="sellingQuantity" placeholder="Enter Quantity...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="submit" class="submitButton">Sell</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- purchaseProduct Operation -->
+  <div class="operationPanel" id="getPurchasingInfo">
+    <form action="getPurchasingInfo" method="post">
+      <div>
+        <h1 class="operationHeading">Purchase Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="inputField" type="text" name="id" placeholder="Enter ID...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="button" class="submitButton" onclick="purchaseProduct()">Purchase</button>
+      </div>
+    </form>
+  </div>
+  <div class="operationPanel" id="purchaseProduct">
+    <form action="purchaseProduct" method="post">
+      <div>
+        <h1 class="operationHeading">Purchase Product</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="automatedField" type="text" name="id" value="${purchasingInfo.id}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Name</i>
+        <input class="automatedField" type="text" value="${purchasingInfo.name}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Quantity</i>
+        <input class="inputField" type="text" name="purchasingQuantity" placeholder="Enter Quantity...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="submit" class="submitButton">Purchase</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- fetchProductDetails Operation -->
+  <div class="operationPanel" id="requestProductDetails">
+    <form action="fetchProductDetails" method="post">
+      <div>
+        <h1 class="operationHeading">Fetch Product Details</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="inputField" type="text" name="id" placeholder="Enter ID...">
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Cancel</button>
+        <button type="button" class="submitButton" onclick="fetchProductDetails()">Fetch</button>
+      </div>
+    </form>
+  </div>
+  <div class="operationPanel" id="fetchProductDetails">
+    <form>
+      <div>
+        <h1 class="operationHeading">Fetch Product Details</h1>
+      </div>
+      <div class="formElement">
+        <i class="label">ID</i>
+        <input class="automatedField" type="text" value="${productInfo.id}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Name</i>
+        <input class="automatedField" type="text" value="${productInfo.name}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Total Quantity</i>
+        <input class="automatedField" type="text" value="${productInfo.quantityUnit}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Total Amount</i>
+        <input class="automatedField" type="text" value="${productInfo.totalAmount}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Amount Per Quantity</i>
+        <input class="automatedField" type="text" value="${productInfo.amountPerQuantity}" readonly>
+      </div>
+      <div class="formElement">
+        <i class="label">Minimum Quantity Alert</i>
+        <input class="automatedField" type="text" value="${productInfo.minimumQuantityAlert}" readonly>
+      </div>
+      <div class="button">
+        <button class="cancelButton" onclick="cancelOperation()">Got It</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer Coding -->
+  <div id="Footer">
+  	<p id="copyrightHeading">Store Inventory Management System</p>
+    <p id="copyrightContent">Copyright © 2022 Jitesh Choudhary. All Rights Reserved.</p>
+  </div>
+
+</body>
+
+</html>
