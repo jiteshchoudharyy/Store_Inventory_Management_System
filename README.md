@@ -1,4 +1,4 @@
-![image](https://github.com/jiteshchoudharyy/Store_Inventory_Management_System/assets/63442033/4ef105c2-d3fc-44a4-a0e7-455f0ef5a2b5)# Store_Inventory_Management_System
+# Store_Inventory_Management_System
 Basic Inventory Management System (Add, Delete, Sell, Purchase, Fetch Data) || Used HTML, CSS, JavaScript, Sevlet, Java, JDBC, MySQL
 
 **Introduction**:- It's a simple Web Application that lets user to perform basic operations that are usually found in an Inventory Management System.
